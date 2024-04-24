@@ -11,6 +11,7 @@ namespace Blog.Controllers
     public class CategoryControler : ControllerBase
     {
         [HttpGet("v1/categories")]
+
         public async Task<IActionResult> GetAsync([FromServices] BlogDataContext context)
         {
             try

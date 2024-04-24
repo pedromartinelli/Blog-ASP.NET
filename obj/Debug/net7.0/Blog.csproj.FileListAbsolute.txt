@@ -68,3 +68,4 @@ C:\Prog\balta\ASP.NET\Blog\obj\Debug\net7.0\refint\Blog.dll
 C:\Prog\balta\ASP.NET\Blog\obj\Debug\net7.0\Blog.pdb
 C:\Prog\balta\ASP.NET\Blog\obj\Debug\net7.0\Blog.genruntimeconfig.cache
 C:\Prog\balta\ASP.NET\Blog\obj\Debug\net7.0\ref\Blog.dll
+C:\Prog\balta\ASP.NET\Blog\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
