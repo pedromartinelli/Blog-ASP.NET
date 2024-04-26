@@ -3707,23 +3707,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pmart\\.nuget\\packages\\": {},
+    "C:\\Users\\IST\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Prog\\balta.io\\Blog-ASP.NET\\Blog.csproj",
+      "projectUniqueName": "C:\\Prog\\balta\\ASP.NET\\Blog-ASP.NET\\Blog.csproj",
       "projectName": "Blog",
-      "projectPath": "C:\\Prog\\balta.io\\Blog-ASP.NET\\Blog.csproj",
-      "packagesPath": "C:\\Users\\pmart\\.nuget\\packages\\",
-      "outputPath": "C:\\Prog\\balta.io\\Blog-ASP.NET\\obj\\",
+      "projectPath": "C:\\Prog\\balta\\ASP.NET\\Blog-ASP.NET\\Blog.csproj",
+      "packagesPath": "C:\\Users\\IST\\.nuget\\packages\\",
+      "outputPath": "C:\\Prog\\balta\\ASP.NET\\Blog-ASP.NET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\pmart\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\IST\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3732,7 +3732,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3789,7 +3788,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
