@@ -4,6 +4,9 @@ using Blog.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Blog.Models;
+using Blog.Utils;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +39,7 @@ builder.Services.AddDbContext<BlogDataContext>();
 //AddScoped - o objeto será inicializado uma vez no começo da requisição e finalizado ao final
 //AddSingleton - o objeto será inicializado apenas uma vez e assim ficará por toda a aplicação
 builder.Services.AddTransient<TokenService>();
+builder.Services.AddTransient<PasswordHasher<User>>();
 
 var app = builder.Build();
 

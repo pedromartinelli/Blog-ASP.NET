@@ -2,8 +2,8 @@
 using Blog.Extensions;
 using Blog.Models;
 using Blog.Services;
-using Blog.Utils;
 using Blog.ViewModel;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,10 +13,12 @@ namespace Blog.Controllers
     public class AccountController : ControllerBase
     {
         private readonly TokenService _tokenService;
+        private readonly PasswordHasher<User> _passwordHasher;
 
-        public AccountController(TokenService tokenService)
+        public AccountController(TokenService tokenService, PasswordHasher<User> passwordHasher)
         {
             _tokenService = tokenService;
+            _passwordHasher = passwordHasher;
         }
 
         [HttpPost("v1/accounts")]
@@ -30,19 +32,22 @@ namespace Blog.Controllers
             {
                 Name = model.Name,
                 Email = model.Email,
-                Slug = model.Email.Replace("@", "-").Replace(".", "-"),
-                PasswordHash = PasswordUtil.HashPassword(model.Password)
+                Slug = model.Email.Replace("@", "-").Replace(".", "-")
             };
+            
+            user.PasswordHash = _passwordHasher.HashPassword(user, model.Password);
 
             try
             {
                 await context.Users.AddAsync(user);
                 await context.SaveChangesAsync();
 
+
+                //return Ok(user.PasswordHash);
                 return Ok(new ResultViewModel<dynamic>(new
                 {
                     user = user.Name,
-                    password = user.PasswordHash
+                    email = user.Email
                 }));
             }
             catch (DbUpdateException)
@@ -56,16 +61,28 @@ namespace Blog.Controllers
         }
 
         [HttpPost("v1/accounts/login")]
-        public IActionResult Login(
+        public async Task<IActionResult> Login(
             [FromBody] LoginViewModel model,
             [FromServices] BlogDataContext context)
         {
             if (!ModelState.IsValid)
                 return BadRequest(new ResultViewModel<string>(ModelState.GetErrors()));
 
+            var user = await context
+                .Users
+                .AsNoTracking()
+                .Include(x => x.Roles)
+                .FirstOrDefaultAsync(x => x.Email == model.Email);
+
+            if (user == null )
+                return StatusCode(401, new ResultViewModel<User>("E-mail ou senha inválidos"));
+
+            if (_passwordHasher.VerifyHashedPassword(user, user.PasswordHash, model.Password) != PasswordVerificationResult.Success)
+                return StatusCode(401, new ResultViewModel<User>("E-mail ou senha inválidos"));
+
             try
             {
-                var token = _tokenService.GenerateToken(null);
+                var token = _tokenService.GenerateToken(user);
 
                 return Ok(token);
             }
