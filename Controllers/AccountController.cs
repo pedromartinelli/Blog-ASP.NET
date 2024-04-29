@@ -28,13 +28,17 @@ namespace Blog.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(new ResultViewModel<string>(ModelState.GetErrors()));
 
+            var existing = await context.Users.AnyAsync(x => x.Email == model.Email);
+
+            if (existing) return StatusCode(409, new ResultViewModel<User>("07HK5 - Email já cadastrado"));
+
             var user = new User
             {
                 Name = model.Name,
                 Email = model.Email,
                 Slug = model.Email.Replace("@", "-").Replace(".", "-")
             };
-            
+
             user.PasswordHash = _passwordHasher.HashPassword(user, model.Password);
 
             try
@@ -74,7 +78,7 @@ namespace Blog.Controllers
                 .Include(x => x.Roles)
                 .FirstOrDefaultAsync(x => x.Email == model.Email);
 
-            if (user == null )
+            if (user == null)
                 return StatusCode(401, new ResultViewModel<User>("E-mail ou senha inválidos"));
 
             if (_passwordHasher.VerifyHashedPassword(user, user.PasswordHash, model.Password) != PasswordVerificationResult.Success)
