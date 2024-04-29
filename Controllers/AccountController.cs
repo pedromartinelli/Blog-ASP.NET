@@ -84,7 +84,10 @@ namespace Blog.Controllers
             {
                 var token = _tokenService.GenerateToken(user);
 
-                return Ok(token);
+                return Ok(new ResultViewModel<dynamic>(new
+                {
+                    token
+                }));
             }
             catch (Exception)
             {
