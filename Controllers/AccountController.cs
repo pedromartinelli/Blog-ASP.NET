@@ -14,11 +14,16 @@ namespace Blog.Controllers
     {
         private readonly TokenService _tokenService;
         private readonly PasswordHasher<User> _passwordHasher;
+        private readonly EmailService _emailService;
 
-        public AccountController(TokenService tokenService, PasswordHasher<User> passwordHasher)
+        public AccountController(
+            TokenService tokenService,
+            PasswordHasher<User> passwordHasher,
+            EmailService emailService)
         {
             _tokenService = tokenService;
             _passwordHasher = passwordHasher;
+            _emailService = emailService;
         }
 
         [HttpPost("v1/accounts")]
@@ -47,11 +52,14 @@ namespace Blog.Controllers
                 await context.SaveChangesAsync();
 
 
+                var email = _emailService.Send(user.Name, user.Email, "Bem vindo!", $"Olá, <strong>{user.Name}</strong>! \n Agradecemos pelo seu cadastro, seja bem vindo ao Blog.");
+
                 //return Ok(user.PasswordHash);
                 return Ok(new ResultViewModel<dynamic>(new
                 {
                     user = user.Name,
-                    email = user.Email
+                    email = user.Email,
+                    mail = email
                 }));
             }
             catch (DbUpdateException)

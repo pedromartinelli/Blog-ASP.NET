@@ -8,26 +8,28 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-
+LoadConfiguration(builder);
 ConfigureAuthentication(builder);
 ConfigureMvc(builder);
 ConfigureServices(builder);
 
 var app = builder.Build();
-LoadConfiguration(app);
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
 
-void LoadConfiguration(WebApplication app)
+void LoadConfiguration(WebApplicationBuilder builder)
 {
-    Configuration.JwtKey = app.Configuration.GetValue<string>("JwtKey");
-    Configuration.ApiKeyName = app.Configuration.GetValue<string>("ApiKeyName");
-    Configuration.ApiKey = app.Configuration.GetValue<string>("ApiKey");
+    var configuration = builder.Configuration;
+
+    Configuration.JwtKey = configuration.GetValue<string>("JwtKey");
+    Configuration.ApiKeyName = configuration.GetValue<string>("ApiKeyName");
+    Configuration.ApiKey = configuration.GetValue<string>("ApiKey");
 
     var smtp = new Configuration.SmtpConfiguration();
-    app.Configuration.GetSection("Smtp").Bind(smtp);
+    configuration.GetSection("Smtp").Bind(smtp);
     Configuration.Smtp = smtp;
 }
 
@@ -69,4 +71,5 @@ void ConfigureServices(WebApplicationBuilder builder)
     builder.Services.AddDbContext<BlogDataContext>();
     builder.Services.AddTransient<TokenService>();
     builder.Services.AddTransient<PasswordHasher<User>>();
+    builder.Services.AddTransient<EmailService>();
 }
