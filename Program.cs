@@ -17,6 +17,7 @@ var app = builder.Build();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseStaticFiles();
 app.MapControllers();
 app.Run();
 
@@ -24,6 +25,7 @@ void LoadConfiguration(WebApplicationBuilder builder)
 {
     var configuration = builder.Configuration;
 
+    Configuration.ApiUrl = configuration.GetValue<string>("ApiUrl");
     Configuration.JwtKey = configuration.GetValue<string>("JwtKey");
     Configuration.ApiKeyName = configuration.GetValue<string>("ApiKeyName");
     Configuration.ApiKey = configuration.GetValue<string>("ApiKey");
