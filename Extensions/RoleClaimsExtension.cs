@@ -1,4 +1,5 @@
 ﻿using Blog.Models;
+using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
 namespace Blog.Extensions
@@ -16,5 +17,8 @@ namespace Blog.Extensions
 
             return result;
         }
+
+        public static string GetEmailClaim(this HttpContext httpContext)
+            => httpContext.User.Claims.Single(x => x.Type == ClaimTypes.Email).Value;
     }
 }
