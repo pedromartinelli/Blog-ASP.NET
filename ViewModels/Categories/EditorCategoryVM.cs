@@ -2,7 +2,7 @@
 
 namespace Blog.ViewModels.Categories
 {
-    public class EditorCategoryViewModel
+    public class EditorCategoryVM
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         [StringLength(40, MinimumLength = 3, ErrorMessage = "Este campo deve conter entre 3 e 40 caracteres")]

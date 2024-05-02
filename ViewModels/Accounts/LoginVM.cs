@@ -2,7 +2,7 @@
 
 namespace Blog.ViewModels.Accounts
 {
-    public class LoginViewModel
+    public class LoginVM
     {
         [Required(ErrorMessage = "O E-mail é obrigatório")]
         [EmailAddress(ErrorMessage = "O E-mail é inválido")]

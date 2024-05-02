@@ -2,7 +2,7 @@
 
 namespace Blog.ViewModels.Accounts
 {
-    public class RegisterViewModel
+    public class RegisterVM
     {
         [Required(ErrorMessage = "O nome é obrigatório")]
         public string Name { get; set; }

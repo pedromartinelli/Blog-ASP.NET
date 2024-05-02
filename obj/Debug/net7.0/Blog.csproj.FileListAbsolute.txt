@@ -211,3 +211,4 @@ C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\refint\Blog.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.pdb
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.genruntimeconfig.cache
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\ref\Blog.dll
+C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Blog.staticwebassets.runtime.json

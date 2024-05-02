@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "iHKkzylLStCdz/H62Ga7eUDHbY68jqQS/peP5vtmhCs=",
+  "Hash": "tjzRsEDRf8hBSziRhRbqsaX7hgrQmrrHQAyy2Fu7XKM=",
   "Source": "Blog",
   "BasePath": "_content/Blog",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "Blog\\wwwroot",
+      "Source": "Blog",
+      "ContentRoot": "C:\\Prog\\balta\\ASP.NET\\Blog-ASP.NET\\wwwroot\\",
+      "BasePath": "_content/Blog",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Prog\\balta\\ASP.NET\\Blog-ASP.NET\\wwwroot\\images\\7a39e78a69fb455a9b1c0ca03722b651.jpg",
+      "SourceId": "Blog",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Prog\\balta\\ASP.NET\\Blog-ASP.NET\\wwwroot\\",
+      "BasePath": "_content/Blog",
+      "RelativePath": "images/7a39e78a69fb455a9b1c0ca03722b651.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\7a39e78a69fb455a9b1c0ca03722b651.jpg"
+    }
+  ]
 }

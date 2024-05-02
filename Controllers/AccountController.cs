@@ -1,5 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using Blog.Data;
+﻿using Blog.Data;
 using Blog.Extensions;
 using Blog.Models;
 using Blog.Services;
@@ -9,6 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Text.RegularExpressions;
 
 namespace Blog.Controllers
 {
@@ -31,7 +31,7 @@ namespace Blog.Controllers
 
         [HttpPost("v1/accounts")]
         public async Task<IActionResult> Post(
-            [FromBody] RegisterViewModel model,
+            [FromBody] RegisterVM model,
             [FromServices] BlogDataContext context)
         {
             if (!ModelState.IsValid) return BadRequest(new ResultViewModel<string>(ModelState.GetErrors()));
@@ -54,7 +54,6 @@ namespace Blog.Controllers
                 await context.Users.AddAsync(user);
                 await context.SaveChangesAsync();
 
-
                 var email = _emailService.Send(user.Name, user.Email, "Bem vindo!", $"Olá, <strong>{user.Name}</strong>! \n Agradecemos pelo seu cadastro, seja bem vindo ao Blog.");
 
                 return Ok(new ResultViewModel<dynamic>(new
@@ -76,7 +75,7 @@ namespace Blog.Controllers
 
         [HttpPost("v1/accounts/login")]
         public async Task<IActionResult> Login(
-            [FromBody] LoginViewModel model,
+            [FromBody] LoginVM model,
             [FromServices] BlogDataContext context)
         {
             if (!ModelState.IsValid)
@@ -112,7 +111,7 @@ namespace Blog.Controllers
         [Authorize]
         [HttpPost("v1/accounts/upload-image")]
         public async Task<IActionResult> UploadImage(
-            [FromBody] UploadImageViewModel model,
+            [FromBody] UploadImageVM model,
             [FromServices] BlogDataContext context)
         {
             var fileName = $"{Guid.NewGuid():N}.jpg";
