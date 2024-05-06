@@ -9,7 +9,12 @@ namespace Blog.Controllers
     {
         // health check
         [HttpGet("")]
-        public IActionResult Get() => Ok();
+        public IActionResult Get(IConfiguration config)
+        {
+            var env = config.GetValue<string>("Env");
+
+            return Ok(env);
+        }
 
         [HttpGet("/test")]
         [ApiKey]

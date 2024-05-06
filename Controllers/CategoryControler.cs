@@ -3,12 +3,14 @@ using Blog.Extensions;
 using Blog.Models;
 using Blog.ViewModel;
 using Blog.ViewModels.Categories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 
 namespace Blog.Controllers
 {
+    [Tags("Category")]
     [ApiController]
     public class CategoryControler : ControllerBase
     {
@@ -19,7 +21,11 @@ namespace Blog.Controllers
             this.cache = cache;
         }
 
+        /// <summary>
+        /// List categories.
+        /// </summary>
         [HttpGet("v1/categories")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAsync([FromServices] BlogDataContext context)
         {
             try
@@ -39,7 +45,11 @@ namespace Blog.Controllers
             }
         }
 
+        /// <response code="200">If item was found.</response>
+        /// <response code="404">If the item doesn't exist.</response>
         [HttpGet("v1/categories/{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetByIdAsync([FromRoute] int id, [FromServices] BlogDataContext context)
         {
             try
@@ -56,7 +66,9 @@ namespace Blog.Controllers
             }
         }
 
+        /// <response code="403">User not Authorized.</response>
         [HttpPost("v1/categories")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PostAsync([FromBody] EditorCategoryVM model, [FromServices] BlogDataContext context)
         {
             if (!ModelState.IsValid) return BadRequest(new ResultViewModel<Category>(ModelState.GetErrors()));
@@ -80,6 +92,7 @@ namespace Blog.Controllers
         }
 
         [HttpPut("v1/categories/{id:int}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> PutAsync([FromRoute] int id, [FromBody] EditorCategoryVM model, [FromServices] BlogDataContext context)
         {
 
@@ -110,6 +123,7 @@ namespace Blog.Controllers
         }
 
         [HttpDelete("v1/categories/{id:int}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteAsync([FromRoute] int id, [FromServices] BlogDataContext context)
         {
             try

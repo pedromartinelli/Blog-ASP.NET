@@ -142,6 +142,7 @@ C:\Prog\balta.io\Blog-ASP.NET\obj\Debug\net7.0\Blog.genruntimeconfig.cache
 C:\Prog\balta.io\Blog-ASP.NET\obj\Debug\net7.0\ref\Blog.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\appsettings.Development.json
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\appsettings.json
+C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Blog.staticwebassets.runtime.json
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Blog.exe
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Blog.deps.json
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Blog.runtimeconfig.json
@@ -167,9 +168,13 @@ C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Microsoft.IdentityModel.Logg
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Microsoft.SqlServer.Server.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Microsoft.Win32.SystemEvents.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\System.CodeDom.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\System.Configuration.ConfigurationManager.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\System.Drawing.Common.dll
@@ -196,6 +201,7 @@ C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.GeneratedMSBuildEditorC
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.AssemblyInfoInputs.cache
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.AssemblyInfo.cs
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.csproj.CoreCompileInputs.cache
+C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.MvcApplicationPartsAssemblyInfo.cs
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.MvcApplicationPartsAssemblyInfo.cache
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\staticwebassets\msbuild.Blog.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\staticwebassets\msbuild.build.Blog.props
@@ -211,4 +217,5 @@ C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\refint\Blog.dll
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.pdb
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.genruntimeconfig.cache
 C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\ref\Blog.dll
-C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Blog.staticwebassets.runtime.json
+C:\Prog\balta\ASP.NET\Blog-ASP.NET\bin\Debug\net7.0\Blog.xml
+C:\Prog\balta\ASP.NET\Blog-ASP.NET\obj\Debug\net7.0\Blog.xml
