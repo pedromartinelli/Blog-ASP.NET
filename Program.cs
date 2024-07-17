@@ -27,7 +27,7 @@ builder.Services.AddSwaggerGen(options =>
     {
         Version = "v1",
         Title = "Blog API",
-        Description = "Uma ASP.NET Core Web API para gerenciamnento de um Blog.",
+        Description = "Uma ASP.NET Core Web API para gerenciamento de um Blog.",
         TermsOfService = new Uri("https://example.com/terms"),
         Contact = new OpenApiContact
         {
